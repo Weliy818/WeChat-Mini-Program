@@ -1,0 +1,114 @@
+<!-- pages/profile/index.wxml -->
+<view class="page-container profile-page">
+  <!-- 装饰元素 -->
+  <view class="star-decoration star-1"></view>
+  <view class="star-decoration star-2"></view>
+  <view class="star-decoration star-3"></view>
+  <view class="star-decoration star-4"></view>
+  <view class="cloud-decoration cloud-1"></view>
+  <view class="cloud-decoration cloud-2"></view>
+
+  <!-- 头部 -->
+  <view class="page-header">
+    <view class="header-bg-circle header-bg-1"></view>
+    <view class="header-bg-circle header-bg-2"></view>
+    
+    <view class="header-content">
+      <!-- 未登录状态 -->
+      <block wx:if="{{!isLoggedIn}}">
+        <view class="avatar-container">
+          <view class="avatar default">
+            <image class="avatar-icon" src="https://img.icons8.com/ios/50/FFFFFF/user.png" mode="aspectFit"></image>
+          </view>
+        </view>
+        <text class="welcome-title">👋 欢迎来到童话世界</text>
+        <text class="welcome-subtitle">登录开启你的阅读之旅</text>
+        <button class="login-btn" bindtap="handleLogin">
+          <image class="btn-icon" src="https://img.icons8.com/ios/24/9333EA/login-rounded-right.png" mode="aspectFit"></image>
+          <text>立即登录</text>
+        </button>
+      </block>
+      
+      <!-- 已登录状态 -->
+      <block wx:else>
+        <view class="avatar-container">
+          <view class="avatar logged-in">
+            <image class="avatar-image" src="{{userInfo.avatar}}" mode="aspectFill"></image>
+            <text class="avatar-fallback" wx:if="{{!userInfo.avatar}}">{{userInfo.name}}</text>
+          </view>
+        </view>
+        <text class="user-name">👦 {{userInfo.name}}</text>
+        <text class="user-title">{{userInfo.title}} ✨</text>
+      </block>
+    </view>
+  </view>
+
+  <view class="main-content">
+    <!-- 统计卡片 -->
+    <view class="stats-grid" wx:if="{{isLoggedIn}}">
+      <view class="stat-card stat-blue" wx:for="{{stats}}" wx:key="label">
+        <view class="stat-icon-container {{item.color}}">
+          <image wx:if="{{item.icon === 'book'}}" src="https://img.icons8.com/ios/28/FFFFFF/book.png" mode="aspectFit"></image>
+          <image wx:elif="{{item.icon === 'heart'}}" src="https://img.icons8.com/ios/28/FFFFFF/like.png" mode="aspectFit"></image>
+          <image wx:else src="https://img.icons8.com/ios/28/FFFFFF/medal.png" mode="aspectFit"></image>
+        </view>
+        <text class="stat-value">{{item.value}}</text>
+        <text class="stat-label">{{item.label}}</text>
+      </view>
+    </view>
+
+    <!-- 菜单列表 -->
+    <view class="menu-card">
+      <view class="menu-item" wx:for="{{menuItems}}" wx:key="label" 
+            bindtap="onMenuItemClick" data-url="{{item.url}}">
+        <view class="menu-icon-container {{item.color}}">
+          <image wx:if="{{item.icon === 'heart'}}" src="https://img.icons8.com/ios/24/3B82F6/like.png" mode="aspectFit"></image>
+          <image wx:elif="{{item.icon === 'book'}}" src="https://img.icons8.com/ios/24/22C55E/book.png" mode="aspectFit"></image>
+          <image wx:elif="{{item.icon === 'award'}}" src="https://img.icons8.com/ios/24/9333EA/medal.png" mode="aspectFit"></image>
+          <image wx:else src="https://img.icons8.com/ios/24/F97316/settings.png" mode="aspectFit"></image>
+        </view>
+        <text class="menu-label">{{item.label}}</text>
+        <image class="menu-arrow" src="https://img.icons8.com/ios/20/A855F7/chevron-right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <!-- 退出登录按钮 -->
+    <button class="logout-btn" wx:if="{{isLoggedIn}}" bindtap="handleLogout">
+      退出登录
+    </button>
+
+    <!-- 版本信息 -->
+    <view class="version-info">
+      <text class="version-text">🎨 童话绘本 v1.0.0</text>
+      <text class="version-desc">用爱心传递知识，让每个孩子都能享受阅读 ❤️</text>
+    </view>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <view class="nav-items">
+      <view class="nav-item {{activeTab === 'customize' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/customize/index">
+        <image class="nav-icon {{activeTab === 'customize' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'customize' ? '7C3AED' : 'FFFFFF'}}/star.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'customize' ? 'nav-text-active' : ''}}">定制</text>
+      </view>
+      <view class="nav-item {{activeTab === 'library' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/library/index">
+        <image class="nav-icon {{activeTab === 'library' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'library' ? '7C3AED' : 'FFFFFF'}}/library.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'library' ? 'nav-text-active' : ''}}">书城</text>
+      </view>
+      <view class="nav-item nav-item-center {{activeTab === 'index' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/index/index">
+        <view class="nav-center-btn">
+          <image class="nav-icon-center" src="https://img.icons8.com/ios-filled/50/FFFFFF/home.png" mode="aspectFit"></image>
+        </view>
+        <text class="nav-text {{activeTab === 'index' ? 'nav-text-active' : ''}}">首页</text>
+      </view>
+      <view class="nav-item {{activeTab === 'learn' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/learn/index">
+        <image class="nav-icon {{activeTab === 'learn' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'learn' ? '7C3AED' : 'FFFFFF'}}/graduation-cap.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'learn' ? 'nav-text-active' : ''}}">学习</text>
+      </view>
+      <view class="nav-item {{activeTab === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/profile/index">
+        <image class="nav-icon {{activeTab === 'profile' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'profile' ? '7C3AED' : 'FFFFFF'}}/user.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'profile' ? 'nav-text-active' : ''}}">个人</text>
+      </view>
+    </view>
+  </view>
+</view>

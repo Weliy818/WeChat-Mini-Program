@@ -1,0 +1,598 @@
+/* pages/index/index.wxss */
+page {
+  background: linear-gradient(180deg, #E0F2FE 0%, #DBEAFE 30%, #F3E8FF 100%);
+}
+
+.container {
+  min-height: 100vh;
+  padding-bottom: 180rpx;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+}
+
+/* 页面容器添加底部内边距，避免被底部导航遮挡 */
+.page-container {
+  min-height: 100vh;
+  padding-bottom: 180rpx;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 头部区域 */
+.page-header {
+  background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 50%, #A78BFA 100%);
+  padding: 80rpx 32rpx 60rpx;
+  border-radius: 0 0 60rpx 60rpx;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 头部内容区域 */
+.main-content {
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* 原始header样式，保持兼容性 */
+.header {
+  background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 50%, #A78BFA 100%);
+  padding: 80rpx 0 60rpx;
+  border-radius: 0 0 60rpx 60rpx;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 装饰元素样式 */
+.star-decoration, .cloud-decoration {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.star-1 {
+  top: 100rpx;
+  left: 50rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background-image: url(https://img.icons8.com/ios-filled/50/FFFFFF/star.png);
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.star-2 {
+  top: 200rpx;
+  right: 80rpx;
+  width: 24rpx;
+  height: 24rpx;
+  background-image: url(https://img.icons8.com/ios-filled/50/FFFFFF/star.png);
+  animation: twinkle 4s ease-in-out infinite 0.5s;
+}
+
+.star-3 {
+  bottom: 150rpx;
+  left: 120rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background-image: url(https://img.icons8.com/ios-filled/50/FFFFFF/star.png);
+  animation: twinkle 5s ease-in-out infinite 1s;
+}
+
+.star-4 {
+  bottom: 200rpx;
+  right: 150rpx;
+  width: 22rpx;
+  height: 22rpx;
+  background-image: url(https://img.icons8.com/ios-filled/50/FFFFFF/star.png);
+  animation: twinkle 3.5s ease-in-out infinite 1.5s;
+}
+
+.cloud-1 {
+  top: 150rpx;
+  left: 100rpx;
+  width: 120rpx;
+  height: 80rpx;
+  background-image: url(https://img.icons8.com/ios-filled/50/FFFFFF/cloud.png);
+  opacity: 0.4;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cloud-2 {
+  bottom: 100rpx;
+  right: 100rpx;
+  width: 100rpx;
+  height: 60rpx;
+  background-image: url(https://img.icons8.com/ios-filled/50/FFFFFF/cloud.png);
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite 2s;
+}
+
+.header-bg-1 {
+  position: absolute;
+  top: 20rpx;
+  right: 32rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(20rpx);
+}
+
+.header-bg-2 {
+  position: absolute;
+  top: 60rpx;
+  right: 112rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(253, 224, 71, 0.3);
+  border-radius: 50%;
+}
+
+.header-bg-3 {
+  position: absolute;
+  bottom: 20rpx;
+  left: 32rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background: rgba(249, 168, 212, 0.2);
+  border-radius: 50%;
+  filter: blur(30rpx);
+}
+
+.header-bg-4 {
+  position: absolute;
+  bottom: 40rpx;
+  left: 112rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(103, 232, 249, 0.3);
+  border-radius: 50%;
+}
+
+/* 动画效果 */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20rpx); }
+}
+
+.header-content {
+  position: relative;
+  z-index: 10;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.header-icon-box {
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.header-title {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.header-right {
+  position: relative;
+}
+
+.header-sparkle {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.header-subtitle {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 搜索栏 */
+.search-wrapper {
+  padding: 0 32rpx;
+  margin-top: -50rpx;
+  position: relative;
+  z-index: 20;
+  margin-bottom: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  margin: 0;
+  background: #fff;
+  border-radius: 50rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.1);
+  border: 4rpx solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(90deg, #F472B6, #A855F7, #3B82F6);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 20rpx;
+}
+
+.search-icon {
+  width: 36rpx;
+  height: 36rpx;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  padding: 0;
+  font-size: 28rpx;
+  color: #374151;
+  background: transparent;
+}
+
+.search-placeholder {
+  color: #9CA3AF;
+}
+
+.search-sparkle {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+}
+
+/* 区块样式 */
+.section {
+  padding: 0 32rpx;
+  margin-bottom: 50rpx;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.section-bar {
+  width: 10rpx;
+  height: 50rpx;
+  background: linear-gradient(180deg, #F472B6, #A855F7, #3B82F6);
+  border-radius: 10rpx;
+}
+
+.section-bar-cyan {
+  background: linear-gradient(180deg, #14B8A6, #06B6D4, #3B82F6);
+}
+
+.section-title {
+  font-size: 44rpx;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0284C7, #7C3AED);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.section-title-cyan {
+  background: linear-gradient(90deg, #0D9488, #0891B2);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.section-icons {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.section-icons image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.section-sparkle {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 大卡片 */
+.book-card-large {
+  position: relative;
+  height: 480rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.15);
+}
+
+.book-cover-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.book-tag {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  padding: 8rpx 24rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #fff;
+  z-index: 10;
+}
+
+.tag-hot { background: linear-gradient(90deg, #EC4899, #F43F5E); }
+.tag-classic { background: linear-gradient(90deg, #06B6D4, #3B82F6); }
+.tag-fantasy { background: linear-gradient(90deg, #A855F7, #EC4899); }
+.tag-adventure { background: linear-gradient(90deg, #F97316, #EAB308); }
+.tag-friendship { background: linear-gradient(90deg, #22C55E, #10B981); }
+.tag-funny { background: linear-gradient(90deg, #F43F5E, #EC4899); }
+
+.book-info-large {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.book-title-large {
+  display: block;
+  font-size: 44rpx;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.3);
+}
+
+.book-author-large {
+  display: block;
+  font-size: 26rpx;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.book-rating {
+  display: flex;
+  gap: 0;
+}
+
+.book-rating image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+/* 小卡片行 */
+.book-row {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.book-card-small {
+  flex: 1;
+  position: relative;
+  height: 400rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.book-cover-small {
+  width: 100%;
+  height: 280rpx;
+  object-fit: cover;
+  display: block;
+}
+
+.book-info-small {
+  padding: 30rpx 24rpx;
+  background: #fff;
+  text-align: center;
+}
+
+.book-info-small .book-tag {
+  position: relative;
+  top: auto;
+  right: auto;
+  display: inline-block;
+  margin-bottom: 16rpx;
+  font-size: 22rpx;
+  padding: 6rpx 20rpx;
+  width: fit-content;
+  border-radius: 30rpx;
+}
+
+.book-title-small {
+  display: block;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.book-rating-small {
+  display: flex;
+  gap: 0;
+}
+
+.book-rating-small image {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+/* 大卡片 - 首页主要使用 */
+.book-card {
+  position: relative;
+  margin-bottom: 30rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.book-cover {
+  width: 100%;
+  height: 400rpx;
+  object-fit: cover;
+  display: block;
+}
+
+.book-info {
+  padding: 30rpx;
+  background: #fff;
+}
+
+.book-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 10rpx;
+}
+
+.book-author {
+  display: block;
+  font-size: 28rpx;
+  color: #6B7280;
+  margin-bottom: 20rpx;
+}
+
+.book-rating {
+  display: flex;
+  gap: 10rpx;
+}
+
+.book-rating image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+/* 列表卡片 */
+.book-card-list {
+  display: flex;
+  background: #fff;
+  border-radius: 40rpx;
+  overflow: hidden;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.08);
+}
+
+.book-cover-list {
+  width: 200rpx;
+  height: 200rpx;
+  object-fit: cover;
+}
+
+.book-info-list {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(90deg, #FFF7ED, #FFFBEB, transparent);
+}
+
+.book-info-list .book-tag {
+  position: relative;
+  top: auto;
+  right: auto;
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 20rpx;
+  padding: 0;
+  width: fit-content;
+}
+
+.book-title-list {
+  display: block;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 0;
+}
+
+.book-author-list {
+  display: block;
+  font-size: 22rpx;
+  color: #6B7280;
+  margin-bottom: 0;
+}
+
+.book-rating-list {
+  display: flex;
+  gap: 0;
+}
+
+.book-rating-list image {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+/* 底部占位 */
+.bottom-space {
+  height: 40rpx;
+}

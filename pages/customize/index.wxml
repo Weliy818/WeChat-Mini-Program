@@ -1,0 +1,113 @@
+<!-- pages/customize/index.wxml -->
+<view class="page-container">
+  <!-- 装饰元素 -->
+  <view class="star-decoration star-1"></view>
+  <view class="star-decoration star-2"></view>
+  <view class="star-decoration star-3"></view>
+  <view class="star-decoration star-4"></view>
+  <view class="cloud-decoration cloud-1"></view>
+  <view class="cloud-decoration cloud-2"></view>
+  <!-- 头部区域 -->
+  <view class="page-header">
+    <view class="header-bg-1"></view>
+    <view class="header-bg-2"></view>
+    
+    <view class="header-content">
+      <text class="header-title">✨ 创作你的故事 ✨</text>
+      <text class="header-subtitle">让想象力自由飞翔</text>
+    </view>
+  </view>
+
+  <view class="main-content">
+    <!-- 故事灵感卡片 -->
+    <view class="card card-inspiration">
+      <view class="card-bg"></view>
+      <view class="card-content">
+        <view class="card-header">
+          <view class="card-title-row">
+            <image class="card-icon" src="https://img.icons8.com/ios-filled/50/EC4899/star.png" mode="aspectFit"></image>
+            <text class="card-title">故事灵感</text>
+          </view>
+          <text class="card-desc">输入你的创意，我们帮你创作精彩的绘本故事</text>
+        </view>
+        
+        <view class="input-area">
+          <textarea class="story-input" placeholder="例如：一只勇敢的小兔子去森林探险..." 
+                    placeholder-class="input-placeholder" 
+                    value="{{content}}"
+                    bindinput="onContentInput"></textarea>
+          <view class="voice-btn {{isRecording ? 'recording' : ''}}" bindtap="handleVoiceInput">
+            <image class="voice-icon" src="https://img.icons8.com/ios-filled/50/FFFFFF/microphone.png" mode="aspectFit"></image>
+          </view>
+        </view>
+        
+        <view class="recording-tip" wx:if="{{isRecording}}">
+          <view class="recording-dot"></view>
+          <text>正在录音...</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 作品管理卡片 -->
+    <view class="card card-manage">
+      <view class="card-bg card-bg-blue"></view>
+      <view class="card-content">
+        <view class="card-header">
+          <view class="card-title-row">
+            <image class="card-icon" src="https://img.icons8.com/ios-filled/50/3B82F6/download.png" mode="aspectFit"></image>
+            <text class="card-title">作品管理</text>
+          </view>
+          <text class="card-desc">保存并分享你的创作</text>
+        </view>
+        
+        <view class="btn-group">
+          <view class="btn btn-primary" bindtap="generateStory">
+            <image class="btn-icon" src="https://img.icons8.com/ios-filled/50/FFFFFF/star.png" mode="aspectFit"></image>
+            <text>生成绘本故事</text>
+          </view>
+          <view class="btn btn-outline" bindtap="exportPDF">
+            <image class="btn-icon" src="https://img.icons8.com/ios-filled/50/3B82F6/download.png" mode="aspectFit"></image>
+            <text>导出为 PDF</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提示卡片 -->
+    <view class="tip-card">
+      <view class="tip-emoji">💡</view>
+      <text class="tip-text">💡 小提示：说出你的故事想法，我们会帮你创作成精美的绘本！</text>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-space"></view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <view class="nav-items">
+      <view class="nav-item {{activeTab === 'customize' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/customize/index">
+        <image class="nav-icon {{activeTab === 'customize' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'customize' ? '7C3AED' : 'FFFFFF'}}/star.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'customize' ? 'nav-text-active' : ''}}">定制</text>
+      </view>
+      <view class="nav-item {{activeTab === 'library' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/library/index">
+        <image class="nav-icon {{activeTab === 'library' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'library' ? '7C3AED' : 'FFFFFF'}}/library.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'library' ? 'nav-text-active' : ''}}">书城</text>
+      </view>
+      <view class="nav-item nav-item-center {{activeTab === 'index' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/index/index">
+        <view class="nav-center-btn">
+          <image class="nav-icon-center" src="https://img.icons8.com/ios-filled/50/FFFFFF/home.png" mode="aspectFit"></image>
+        </view>
+        <text class="nav-text {{activeTab === 'index' ? 'nav-text-active' : ''}}">首页</text>
+      </view>
+      <view class="nav-item {{activeTab === 'learn' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/learn/index">
+        <image class="nav-icon {{activeTab === 'learn' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'learn' ? '7C3AED' : 'FFFFFF'}}/graduation-cap.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'learn' ? 'nav-text-active' : ''}}">学习</text>
+      </view>
+      <view class="nav-item {{activeTab === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/profile/index">
+        <image class="nav-icon {{activeTab === 'profile' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'profile' ? '7C3AED' : 'FFFFFF'}}/user.png" mode="aspectFit"></image>
+        <text class="nav-text {{activeTab === 'profile' ? 'nav-text-active' : ''}}">个人</text>
+      </view>
+    </view>
+  </view>
+</view>
