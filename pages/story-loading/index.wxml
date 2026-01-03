@@ -1,0 +1,54 @@
+<!-- pages/story-loading/index.wxml -->
+<view class="loading-container">
+  <!-- 装饰背景 -->
+  <view class="loading-bg"></view>
+  <view class="loading-bg loading-bg-2"></view>
+  
+  <!-- 主内容区域 -->
+  <view class="loading-content">
+    <!-- 标题 -->
+    <view class="loading-title">
+      <text class="title-text">✨ 正在生成绘本 ✨</text>
+      <text class="subtitle-text">为孤独症儿童创作温暖故事</text>
+    </view>
+    
+    <!-- Loading 动画 -->
+    <view class="loading-animation">
+      <view class="loading-spinner"></view>
+      <view class="loading-stars">
+        <view class="star star-1"></view>
+        <view class="star star-2"></view>
+        <view class="star star-3"></view>
+        <view class="star star-4"></view>
+        <view class="star star-5"></view>
+      </view>
+    </view>
+    
+    <!-- 生成提示 -->
+    <view class="loading-tips">
+      <text class="tips-text">{{currentTip}}</text>
+    </view>
+    
+    <!-- 进度条 -->
+    <view class="progress-container">
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{progress}}%"></view>
+      </view>
+      <view class="progress-text">
+        <text>{{progress}}%</text>
+      </view>
+    </view>
+    
+    <!-- 生成信息 -->
+    <view class="generation-info">
+      <view class="info-item">
+        <image class="info-icon" src="https://img.icons8.com/ios-filled/50/EC4899/book.png" mode="aspectFit"></image>
+        <text class="info-text">正在生成故事内容...</text>
+      </view>
+      <view class="info-item">
+        <image class="info-icon" src="https://img.icons8.com/ios-filled/50/8B5CF6/image.png" mode="aspectFit"></image>
+        <text class="info-text">正在生成绘本插图...</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -339,27 +339,29 @@ page {
 
 /* 修复底部导航栏图标大小 */
 .profile-page .nav-item:not(.nav-item-center) .nav-icon {
-  width: 56rpx !important;
-  height: 56rpx !important;
-  padding: 12rpx !important;
-  background: linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%) !important;
-  border-radius: 50% !important;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1) !important;
+  width: 64rpx !important;
+  height: 64rpx !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block !important;
 }
 
 .profile-page .nav-item:not(.nav-item-center) .nav-icon-active {
-  width: 56rpx !important;
-  height: 56rpx !important;
-  padding: 12rpx !important;
-  background: linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%) !important;
-  border-radius: 50% !important;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1) !important;
+  width: 64rpx !important;
+  height: 64rpx !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block !important;
 }
 
 /* 确保中间按钮图标大小正常 */
 .profile-page .nav-item-center .nav-icon-center {
-  width: 44rpx !important;
-  height: 44rpx !important;
+  width: 60rpx !important;
+  height: 60rpx !important;
   padding: 16rpx !important;
   background: linear-gradient(135deg, #FF6B6B 0%, #9013FE 50%, #4A90E2 100%) !important;
   border-radius: 50% !important;

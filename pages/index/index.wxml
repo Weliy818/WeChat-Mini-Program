@@ -11,8 +11,8 @@
   <!-- 头部区域 -->
   <view class="page-header">
     <view class="header-content">
-      <text class="header-title">童话绘本</text>
-      <text class="header-subtitle">让每个孩子都能享受阅读的快乐</text>
+      <text class="header-title">故事绘本</text>
+      <text class="header-subtitle">用爱陪伴，点亮星星的孩子</text>
     </view>
   </view>
 
@@ -32,43 +32,47 @@
         <text class="section-title">✨ 精选绘本</text>
       </view>
 
-      <!-- 小王子 -->
+      <!-- 情绪小怪兽 -->
       <view class="book-card" bindtap="onBookClick" data-id="1">
-        <image class="book-cover" src="https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
-        <view class="book-tag tag-hot">热门</view>
+        <image class="book-cover" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E5%92%8C%E8%8A%B1.png" mode="aspectFill"></image>
+        <view class="book-tag tag-hot">心智解读</view>
         <view class="book-info">
-          <text class="book-title">小王子</text>
-          <text class="book-author">安东尼·德·圣-埃克苏佩里</text>
+          <text class="book-title">情绪小怪兽</text>
+          <text class="book-author">安娜·耶纳斯</text>
           <view class="book-rating">
-            <image wx:for="{{[1,2,3,4,5]}}" wx:key="*this" src="https://img.icons8.com/ios-filled/50/FFD700/star.png" mode="aspectFit"></image>
+            <view class="star-rating">
+              <text wx:for="{{[1,2,3,4,5]}}" wx:key="*this" style="color: #FFD700; font-size: 24rpx;">★</text>
+            </view>
           </view>
         </view>
       </view>
 
-      <!-- 双卡片行 - 绿野仙踪和爱丽丝 -->
+      <!-- 双卡片行 - 社交礼仪和常识认知 -->
       <view class="book-row">
         <view class="book-card-small" bindtap="onBookClick" data-id="2">
-          <image class="book-cover-small" src="https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
-          <view class="book-tag tag-classic">经典</view>
-          <text class="book-title-small">绿野仙踪</text>
+          <image class="book-cover-small" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E4%B8%89%E5%85%84%E5%BC%9F.jpg" mode="aspectFill"></image>
+          <view class="book-tag tag-classic">社交礼仪</view>
+          <text class="book-title-small">一起做朋友</text>
         </view>
 
         <view class="book-card-small" bindtap="onBookClick" data-id="3">
-          <image class="book-cover-small" src="https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
-          <view class="book-tag tag-fantasy">奇幻</view>
-          <text class="book-title-small">爱丽丝梦游仙境</text>
+          <image class="book-cover-small" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%B0%8F%E7%8C%AB%E6%B4%97%E6%89%8B.png" mode="aspectFill"></image>
+          <view class="book-tag tag-fantasy">常识认知</view>
+          <text class="book-title-small">学习洗手</text>
         </view>
       </view>
 
-      <!-- 彼得潘 -->
+      <!-- 趣味故事 -->
       <view class="book-card" bindtap="onBookClick" data-id="4">
-        <image class="book-cover" src="https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
-        <view class="book-tag tag-adventure">冒险</view>
+        <image class="book-cover" src="/images/book-covers/01.png" mode="aspectFill"></image>
+        <view class="book-tag tag-adventure">趣味故事</view>
         <view class="book-info">
-          <text class="book-title">彼得潘</text>
-          <text class="book-author">J·M·巴里</text>
+          <text class="book-title">好朋友们</text>
+          <text class="book-author">李欧·李奥尼</text>
           <view class="book-rating">
-            <image wx:for="{{[1,2,3,4,5]}}" wx:key="*this" src="https://img.icons8.com/ios-filled/50/FFD700/star.png" mode="aspectFit"></image>
+            <view class="star-rating">
+              <text wx:for="{{[1,2,3,4,5]}}" wx:key="*this" style="color: #FFD700; font-size: 24rpx;">★</text>
+            </view>
           </view>
         </view>
       </view>
@@ -80,18 +84,18 @@
         <text class="section-title section-title-cyan">💫 更多绘本</text>
       </view>
 
-      <!-- 双卡片行 - 夏洛的网和狐狸爸爸 -->
+      <!-- 双卡片行 - 社交礼仪和趣味故事 -->
       <view class="book-row">
         <view class="book-card-small" bindtap="onBookClick" data-id="5">
-          <image class="book-cover-small" src="https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
-          <view class="book-tag tag-friendship">友谊</view>
-          <text class="book-title-small">夏洛的网</text>
+          <image class="book-cover-small" src="/images/book-covers/05.jpg" mode="aspectFill"></image>
+          <view class="book-tag tag-friendship">社交礼仪</view>
+          <text class="book-title-small">礼貌小明星</text>
         </view>
 
         <view class="book-card-small" bindtap="onBookClick" data-id="6">
-          <image class="book-cover-small" src="https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
-          <view class="book-tag tag-funny">搞笑</view>
-          <text class="book-title-small">了不起的狐狸爸爸</text>
+          <image class="book-cover-small" src="/images/book-covers/05.jpg" mode="aspectFill"></image>
+          <view class="book-tag tag-funny">趣味故事</view>
+          <text class="book-title-small">神奇的一天</text>
         </view>
       </view>
     </view>
@@ -103,26 +107,23 @@
   <!-- 底部导航 -->
   <view class="bottom-nav">
     <view class="nav-items">
+      <!-- 左侧：定制 -->
       <view class="nav-item {{activeTab === 'customize' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/customize/index">
-        <image class="nav-icon {{activeTab === 'customize' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'customize' ? '7C3AED' : 'FFFFFF'}}/star.png" mode="aspectFit"></image>
+        <image class="nav-icon {{activeTab === 'customize' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'customize' ? '7C3AED' : '888888'}}/star.png" mode="aspectFit"></image>
         <text class="nav-text {{activeTab === 'customize' ? 'nav-text-active' : ''}}">定制</text>
       </view>
-      <view class="nav-item {{activeTab === 'library' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/library/index">
-        <image class="nav-icon {{activeTab === 'library' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'library' ? '7C3AED' : 'FFFFFF'}}/library.png" mode="aspectFit"></image>
-        <text class="nav-text {{activeTab === 'library' ? 'nav-text-active' : ''}}">书城</text>
-      </view>
+
+      <!-- 中间：首页 -->
       <view class="nav-item nav-item-center {{activeTab === 'index' ? 'active' : ''}}">
         <view class="nav-center-btn">
           <image class="nav-icon-center" src="https://img.icons8.com/ios-filled/50/FFFFFF/home.png" mode="aspectFit"></image>
         </view>
         <text class="nav-text {{activeTab === 'index' ? 'nav-text-active' : ''}}">首页</text>
       </view>
-      <view class="nav-item {{activeTab === 'learn' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/learn/index">
-        <image class="nav-icon {{activeTab === 'learn' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'learn' ? '7C3AED' : 'FFFFFF'}}/graduation-cap.png" mode="aspectFit"></image>
-        <text class="nav-text {{activeTab === 'learn' ? 'nav-text-active' : ''}}">学习</text>
-      </view>
+
+      <!-- 右侧：个人 -->
       <view class="nav-item {{activeTab === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/profile/index">
-        <image class="nav-icon {{activeTab === 'profile' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'profile' ? '7C3AED' : 'FFFFFF'}}/user.png" mode="aspectFit"></image>
+        <image class="nav-icon {{activeTab === 'profile' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'profile' ? '7C3AED' : '888888'}}/user.png" mode="aspectFit"></image>
         <text class="nav-text {{activeTab === 'profile' ? 'nav-text-active' : ''}}">个人</text>
       </view>
     </view>

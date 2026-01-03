@@ -1,0 +1,203 @@
+/* pages/story-result/index.wxss */
+/* 基于截图设计的绘本结果页样式 */
+.story-result-container {
+  padding: 0;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 顶部渐变标题栏 */
+.top-header {
+  background: linear-gradient(135deg, #A78BFA 0%, #F472B6 50%, #FB923C 100%);
+  padding: 60rpx 30rpx 40rpx;
+  text-align: center;
+  color: #FFFFFF;
+  border-bottom-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+}
+
+.header-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.header-subtitle {
+  font-size: 26rpx;
+  opacity: 0.95;
+  display: block;
+}
+
+/* 绘本信息区域 */
+.book-info {
+  padding: 30rpx;
+  border-bottom: 2rpx solid #F0F0F0;
+  text-align: center;
+}
+
+.book-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.book-author {
+  font-size: 26rpx;
+  color: #6B7280;
+  display: block;
+}
+
+/* 故事内容区域 */
+.story-content {
+  padding: 30rpx;
+  background-color: #F8FAFC;
+}
+
+.content-text {
+  font-size: 32rpx;
+  line-height: 1.8;
+  color: #4B5563;
+  white-space: pre-wrap;
+}
+
+/* 绘本配图区域 */
+.book-images-section {
+  padding: 30rpx 30rpx 200rpx; /* 减少底部内边距一半，保持图片完整显示的同时减少空白 */
+  margin-bottom: 0;
+}
+
+.section-label {
+  font-size: 28rpx;
+  color: #10B981;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+/* 图片网格布局 */
+.images-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.grid-image-item {
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  padding-bottom: 100%; /* 1:1 正方形比例 */
+  height: 0;
+}
+
+/* 图片网格样式 */
+.grid-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 图片占位符 */
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F3F4F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx dashed #D1D5DB;
+}
+
+.placeholder-text {
+  font-size: 28rpx;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+/* 图片页码 */
+.image-page {
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #4B5563;
+  font-size: 24rpx;
+  font-weight: 500;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 底部操作按钮 - 固定在页面底部 */
+.bottom-action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 20rpx;
+  padding: 20rpx 30rpx calc(30rpx + env(safe-area-inset-bottom));
+  background-color: #FFFFFF;
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+/* 按钮样式 */
+.action-button {
+  flex: 1;
+  height: 90rpx;
+  font-size: 32rpx;
+  border-radius: 16rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  /* 确保按钮可以被点击 */
+  position: relative;
+  z-index: 101;
+  overflow: visible;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.action-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 移除默认按钮样式 */
+.action-button::after {
+  border: none;
+}
+
+/* 返回按钮 */
+.back-button {
+  background-color: #F3F4F6;
+  color: #4B5563;
+  border: 2rpx solid #E5E7EB;
+}
+
+/* 重新生成按钮 */
+.regenerate-button {
+  background: linear-gradient(135deg, #9333EA 0%, #EC4899 100%);
+  color: #FFFFFF;
+  border: none;
+}

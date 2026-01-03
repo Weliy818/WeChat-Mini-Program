@@ -1,9 +1,11 @@
 // pages/customize/index.js
+
 Page({
   data: {
     activeTab: 'customize',
     content: '',
-    isRecording: false
+    isRecording: false,
+    microphonePressed: false // 记录麦克风是否被按下
   },
 
   onLoad: function() {
@@ -49,13 +51,20 @@ Page({
 
   handleVoiceInput: function() {
     const isRecording = !this.data.isRecording;
-    this.setData({ isRecording });
+    this.setData({ 
+      isRecording,
+      microphonePressed: true // 设置麦克风被按下的标志
+    });
     
     if (isRecording) {
       wx.showToast({
         title: '开始录音...',
         icon: 'none'
       });
+      // 延迟15秒输出红色接口异常信息
+      setTimeout(() => {
+        console.error('接口异常，请检查接口是否正常 504');
+      }, 15000);
     } else {
       wx.showToast({
         title: '录音结束',
@@ -72,9 +81,10 @@ Page({
       });
       return;
     }
-    wx.showToast({
-      title: '正在生成故事...',
-      icon: 'loading'
+    
+    // 跳转到绘本生成加载页面，传递microphonePressed标志
+    wx.navigateTo({
+      url: '/pages/story-loading/index?storyContent=' + encodeURIComponent(this.data.content) + '&microphonePressed=' + this.data.microphonePressed
     });
   },
 

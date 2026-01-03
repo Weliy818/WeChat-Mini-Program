@@ -2,14 +2,19 @@
   "pages": [
     "pages/index/index",
     "pages/customize/index",
-    "pages/library/index",
-    "pages/learn/index",
-    "pages/profile/index"
+    "pages/profile/index",
+    "pages/story-result/index",
+    "pages/story-loading/index"
   ],
+  "subPackages": [],
+  "lazyCodeLoading": "requiredComponents",
+  "networkTimeout": {
+    "downloadFile": 10000
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "首页",
+    "navigationBarTitleText": "故事绘本",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -23,16 +28,8 @@
         "text": "定制"
       },
       {
-        "pagePath": "pages/library/index",
-        "text": "书城"
-      },
-      {
         "pagePath": "pages/index/index",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/learn/index",
-        "text": "学习"
       },
       {
         "pagePath": "pages/profile/index",

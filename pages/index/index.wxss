@@ -468,6 +468,7 @@ page {
   font-size: 34rpx;
   font-weight: bold;
   color: #1F2937;
+  margin-top: 20rpx;
   margin-bottom: 12rpx;
   overflow: hidden;
   text-overflow: ellipsis;

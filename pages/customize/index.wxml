@@ -13,8 +13,8 @@
     <view class="header-bg-2"></view>
     
     <view class="header-content">
-      <text class="header-title">✨ 创作你的故事 ✨</text>
-      <text class="header-subtitle">让想象力自由飞翔</text>
+      <text class="header-title">✨ 创作专属绘本 ✨</text>
+      <text class="header-subtitle">为孤独症儿童定制温暖故事</text>
     </view>
   </view>
 
@@ -28,11 +28,11 @@
             <image class="card-icon" src="https://img.icons8.com/ios-filled/50/EC4899/star.png" mode="aspectFit"></image>
             <text class="card-title">故事灵感</text>
           </view>
-          <text class="card-desc">输入你的创意，我们帮你创作精彩的绘本故事</text>
+          <text class="card-desc">输入你的创意，为孤独症儿童创作温暖、有爱的绘本故事</text>
         </view>
         
         <view class="input-area">
-          <textarea class="story-input" placeholder="例如：一只勇敢的小兔子去森林探险..." 
+          <textarea class="story-input" placeholder="例如：星星孩子小明的一天，充满爱与理解的故事..." 
                     placeholder-class="input-placeholder" 
                     value="{{content}}"
                     bindinput="onContentInput"></textarea>
@@ -73,10 +73,42 @@
       </view>
     </view>
 
+    <!-- 生成的绘本展示区域 -->
+    <view class="card card-story" wx:if="{{storyContent || storyImages.length > 0}}">
+      <view class="card-bg card-bg-green"></view>
+      <view class="card-content">
+        <view class="card-header">
+          <view class="card-title-row">
+            <image class="card-icon" src="https://img.icons8.com/ios-filled/50/10B981/book.png" mode="aspectFit"></image>
+            <text class="card-title">生成的绘本</text>
+          </view>
+          <text class="card-desc">你的精彩绘本已经生成</text>
+        </view>
+        
+        <!-- 故事内容 -->
+        <view class="story-content" wx:if="{{storyContent}}">
+          <text class="story-text">{{storyContent}}</text>
+        </view>
+        
+        <!-- 绘本图片 -->
+        <view class="story-images" wx:if="{{storyImages.length > 0}}">
+          <view class="images-title">
+            <text>📸 绘本图片</text>
+          </view>
+          <view class="image-grid">
+            <view class="image-item" wx:for="{{storyImages}}" wx:key="index">
+              <image class="story-image" src="{{item}}" mode="aspectFit"></image>
+              <text class="image-caption">第{{index + 1}}页</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
     <!-- 提示卡片 -->
     <view class="tip-card">
       <view class="tip-emoji">💡</view>
-      <text class="tip-text">💡 小提示：说出你的故事想法，我们会帮你创作成精美的绘本！</text>
+      <text class="tip-text">💡 小提示：为孤独症儿童创作时，建议使用简单、温暖的语言，加入视觉辅助元素，帮助他们更好地理解故事！</text>
     </view>
   </view>
 
@@ -86,26 +118,23 @@
   <!-- 底部导航 -->
   <view class="bottom-nav">
     <view class="nav-items">
+      <!-- 左侧：定制 -->
       <view class="nav-item {{activeTab === 'customize' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/customize/index">
-        <image class="nav-icon {{activeTab === 'customize' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'customize' ? '7C3AED' : 'FFFFFF'}}/star.png" mode="aspectFit"></image>
+        <image class="nav-icon {{activeTab === 'customize' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'customize' ? '7C3AED' : '888888'}}/star.png" mode="aspectFit"></image>
         <text class="nav-text {{activeTab === 'customize' ? 'nav-text-active' : ''}}">定制</text>
       </view>
-      <view class="nav-item {{activeTab === 'library' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/library/index">
-        <image class="nav-icon {{activeTab === 'library' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'library' ? '7C3AED' : 'FFFFFF'}}/library.png" mode="aspectFit"></image>
-        <text class="nav-text {{activeTab === 'library' ? 'nav-text-active' : ''}}">书城</text>
-      </view>
+
+      <!-- 中间：首页 -->
       <view class="nav-item nav-item-center {{activeTab === 'index' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/index/index">
         <view class="nav-center-btn">
           <image class="nav-icon-center" src="https://img.icons8.com/ios-filled/50/FFFFFF/home.png" mode="aspectFit"></image>
         </view>
         <text class="nav-text {{activeTab === 'index' ? 'nav-text-active' : ''}}">首页</text>
       </view>
-      <view class="nav-item {{activeTab === 'learn' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/learn/index">
-        <image class="nav-icon {{activeTab === 'learn' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'learn' ? '7C3AED' : 'FFFFFF'}}/graduation-cap.png" mode="aspectFit"></image>
-        <text class="nav-text {{activeTab === 'learn' ? 'nav-text-active' : ''}}">学习</text>
-      </view>
+
+      <!-- 右侧：个人 -->
       <view class="nav-item {{activeTab === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/profile/index">
-        <image class="nav-icon {{activeTab === 'profile' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'profile' ? '7C3AED' : 'FFFFFF'}}/user.png" mode="aspectFit"></image>
+        <image class="nav-icon {{activeTab === 'profile' ? 'nav-icon-active' : ''}}" src="https://img.icons8.com/ios-filled/50/{{activeTab === 'profile' ? '7C3AED' : '888888'}}/user.png" mode="aspectFit"></image>
         <text class="nav-text {{activeTab === 'profile' ? 'nav-text-active' : ''}}">个人</text>
       </view>
     </view>

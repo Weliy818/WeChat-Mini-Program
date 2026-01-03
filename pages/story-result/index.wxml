@@ -1,0 +1,77 @@
+<!-- pages/story-result/index.wxml -->
+<view class="story-result-container">
+  <!-- 顶部渐变标题栏 -->
+  <view class="top-header">
+    <text class="header-title">✨ 你的绘本已生成</text>
+    <text class="header-subtitle">专属故事绘本，温暖陪伴成长</text>
+  </view>
+
+  <!-- 绘本信息区域 -->
+  <view class="book-info">
+    <text class="book-title">我的绘本故事</text>
+    <text class="book-author">· 星星的孩子</text>
+  </view>
+
+  <!-- 故事内容区域 -->
+  <view class="story-content">
+    <text class="content-text">
+      {{storyContent || '一个关于爱的故事，温暖而美好...'}}
+    </text>
+  </view>
+
+  <!-- 绘本配图区域 -->
+  <view class="book-images-section">
+    <text class="section-label">绘本配图</text>
+    <view class="images-grid">
+      <!-- 图片1 -->
+      <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
+        <image 
+          src="/images/book-covers/1.jpg" 
+          mode="aspectFill"
+          class="grid-image"
+        />
+        <text class="image-page">第1页</text>
+      </view>
+
+      <!-- 图片2 -->
+      <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
+        <image 
+          src="/images/book-covers/2.jpg" 
+          mode="aspectFill"
+          class="grid-image"
+        />
+        <text class="image-page">第2页</text>
+      </view>
+
+      <!-- 图片3 -->
+      <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
+        <image 
+          src="/images/book-covers/3.png" 
+          mode="aspectFill"
+          class="grid-image"
+        />
+        <text class="image-page">第3页</text>
+      </view>
+      
+      <!-- 图片4 -->
+      <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
+        <image 
+          src="/images/book-covers/4.jpg" 
+          mode="aspectFill"
+          class="grid-image"
+        />
+        <text class="image-page">第4页</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作按钮 -->
+  <view class="bottom-action-buttons">
+    <button class="action-button back-button" bindtap="backToCustomize">
+      返回定制
+    </button>
+    <button class="action-button regenerate-button" bindtap="regenerateStory">
+      重新生成
+    </button>
+  </view>
+</view>

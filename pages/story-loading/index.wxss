@@ -1,0 +1,254 @@
+/* pages/story-loading/index.wxss */
+page {
+  background: linear-gradient(135deg, #F0ABFC 0%, #EC4899 30%, #8B5CF6 70%, #6366F1 100%);
+}
+
+/* 主容器 */
+.loading-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 背景装饰 */
+.loading-bg {
+  position: absolute;
+  width: 400rpx;
+  height: 400rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(60rpx);
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.loading-bg-2 {
+  width: 300rpx;
+  height: 300rpx;
+  top: 20%;
+  right: 10%;
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+/* 主内容 */
+.loading-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 600rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 60rpx;
+  padding: 60rpx 40rpx;
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20rpx);
+  text-align: center;
+}
+
+/* 标题 */
+.loading-title {
+  margin-bottom: 60rpx;
+}
+
+.title-text {
+  display: block;
+  font-size: 44rpx;
+  font-weight: bold;
+  background: linear-gradient(90deg, #EC4899, #8B5CF6, #6366F1);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 16rpx;
+}
+
+.subtitle-text {
+  display: block;
+  font-size: 26rpx;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* Loading 动画区域 */
+.loading-animation {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto 40rpx;
+}
+
+/* 旋转动画 */
+.loading-spinner {
+  width: 160rpx;
+  height: 160rpx;
+  border: 8rpx solid rgba(139, 92, 246, 0.2);
+  border-top: 8rpx solid #8B5CF6;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  margin: 20rpx;
+}
+
+/* 星星装饰 */
+.loading-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  background: #FCD34D;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 20rpx;
+  left: 20rpx;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 20rpx;
+  right: 20rpx;
+  animation-delay: 0.4s;
+}
+
+.star-3 {
+  bottom: 20rpx;
+  left: 50rpx;
+  animation-delay: 0.8s;
+}
+
+.star-4 {
+  bottom: 40rpx;
+  right: 40rpx;
+  animation-delay: 1.2s;
+}
+
+.star-5 {
+  top: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 1.6s;
+}
+
+/* 生成提示 */
+.loading-tips {
+  margin-bottom: 40rpx;
+}
+
+.tips-text {
+  font-size: 32rpx;
+  color: #4B5563;
+  font-weight: 500;
+}
+
+/* 进度条 */
+.progress-container {
+  margin-bottom: 40rpx;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16rpx;
+  background: #E5E7EB;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-bottom: 12rpx;
+  box-shadow: inset 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #EC4899 0%, #8B5CF6 50%, #6366F1 100%);
+  border-radius: 8rpx;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10rpx rgba(139, 92, 246, 0.5);
+  animation: progress-glow 2s ease-in-out infinite;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  color: #8B5CF6;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 生成信息 */
+.generation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  margin-top: 20rpx;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+}
+
+.info-icon {
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 0.8;
+}
+
+.info-text {
+  font-size: 26rpx;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* 动画定义 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20rpx) translateX(20rpx); }
+  66% { transform: translateY(20rpx) translateX(-20rpx); }
+}
+
+@keyframes progress-glow {
+  0%, 100% { box-shadow: 0 0 10rpx rgba(139, 92, 246, 0.5); }
+  50% { box-shadow: 0 0 20rpx rgba(139, 92, 246, 0.8); }
+}
+
+/* 适配不同屏幕尺寸 */
+@media (max-width: 375rpx) {
+  .loading-content {
+    padding: 40rpx 30rpx;
+    border-radius: 40rpx;
+  }
+  
+  .title-text {
+    font-size: 36rpx;
+  }
+  
+  .loading-animation {
+    width: 160rpx;
+    height: 160rpx;
+  }
+  
+  .loading-spinner {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 20rpx;
+  }
+}
