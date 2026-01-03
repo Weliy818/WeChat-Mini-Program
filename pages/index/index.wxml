@@ -50,7 +50,7 @@
       <!-- 双卡片行 - 社交礼仪和常识认知 -->
       <view class="book-row">
         <view class="book-card-small" bindtap="onBookClick" data-id="2">
-          <image class="book-cover-small" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E4%B8%89%E5%85%84%E5%BC%9F.jpg" mode="aspectFill"></image>
+          <image class="book-cover-small" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E4%BF%A9%E5%B0%8F%E5%AD%A9%E8%BE%A9%E4%B9%A6.png" mode="aspectFill"></image>
           <view class="book-tag tag-classic">社交礼仪</view>
           <text class="book-title-small">一起做朋友</text>
         </view>
@@ -64,7 +64,7 @@
 
       <!-- 趣味故事 -->
       <view class="book-card" bindtap="onBookClick" data-id="4">
-        <image class="book-cover" src="/images/book-covers/01.png" mode="aspectFill"></image>
+        <image class="book-cover" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E4%B8%89%E5%85%84%E5%BC%9F.jpg" mode="aspectFill"></image>
         <view class="book-tag tag-adventure">趣味故事</view>
         <view class="book-info">
           <text class="book-title">好朋友们</text>
@@ -87,13 +87,13 @@
       <!-- 双卡片行 - 社交礼仪和趣味故事 -->
       <view class="book-row">
         <view class="book-card-small" bindtap="onBookClick" data-id="5">
-          <image class="book-cover-small" src="/images/book-covers/05.jpg" mode="aspectFill"></image>
+          <image class="book-cover-small" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E7%A7%AF%E6%9C%A8.jpg" mode="aspectFill"></image>
           <view class="book-tag tag-friendship">社交礼仪</view>
           <text class="book-title-small">礼貌小明星</text>
         </view>
 
         <view class="book-card-small" bindtap="onBookClick" data-id="6">
-          <image class="book-cover-small" src="/images/book-covers/05.jpg" mode="aspectFill"></image>
+          <image class="book-cover-small" src="https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E5%BC%80%E9%97%A8.jpg" mode="aspectFill"></image>
           <view class="book-tag tag-funny">趣味故事</view>
           <text class="book-title-small">神奇的一天</text>
         </view>

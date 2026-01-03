@@ -5,10 +5,10 @@ Page({
     storyContent: '这是一个关于爱与勇气的故事...',
     microphonePressed: false,
     images: [
-      { id: 1, url: '/images/book-covers/1.jpg', alt: '绘本图片1' },
-      { id: 2, url: '/images/book-covers/2.jpg', alt: '绘本图片2' },
-      { id: 3, url: '/images/book-covers/3.png', alt: '绘本图片3' },
-      { id: 4, url: '/images/book-covers/4.jpg', alt: '绘本图片4' }
+      { id: 1, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E7%A7%AF%E6%9C%A8.jpg', alt: '绘本图片1' },
+      { id: 2, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E5%BC%80%E9%97%A8.jpg', alt: '绘本图片2' },
+      { id: 3, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E6%9D%BE%E9%BC%A0.png', alt: '绘本图片3' },
+      { id: 4, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E6%9D%BE%E9%BC%A0%E8%A7%82%E6%B5%B7.jpg', alt: '绘本图片4' }
     ]
   },
 
@@ -27,17 +27,17 @@ Page({
       });
     }
     
-    // 确保图片数组正确初始化
-    if (!this.data.images || this.data.images.length === 0) {
-      this.setData({
-        images: [
-          { id: 1, url: 'https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', alt: '绘本图片1' },
-          { id: 2, url: 'https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', alt: '绘本图片2' },
-          { id: 3, url: this.data.microphonePressed ? '' : 'https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', alt: '绘本图片3' },
-          { id: 4, url: 'https://img2.baidu.com/it/u=2064135069,2383160837&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', alt: '绘本图片4' }
-        ]
-      });
-    }
+    // 根据麦克风是否按下控制图片显示
+    const images = [
+      { id: 1, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E7%A7%AF%E6%9C%A8.jpg', alt: '绘本图片1' },
+      { id: 2, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E5%BC%80%E9%97%A8.jpg', alt: '绘本图片2' },
+      { id: 3, url: 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E6%9D%BE%E9%BC%A0.png', alt: '绘本图片3' },
+      { id: 4, url: this.data.microphonePressed ? '' : 'https://wy-1383356824.cos.ap-shanghai.myqcloud.com/%E5%85%94%E5%AD%90%E6%9D%BE%E9%BC%A0%E8%A7%82%E6%B5%B7.jpg', alt: '绘本图片4' }
+    ];
+    
+    this.setData({
+      images: images
+    });
   },
 
   onShow: function() {

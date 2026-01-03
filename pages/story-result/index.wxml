@@ -26,40 +26,56 @@
       <!-- 图片1 -->
       <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
         <image 
-          src="/images/book-covers/1.jpg" 
+          wx:if="{{images[0].url}}" 
+          src="{{images[0].url}}" 
           mode="aspectFill"
           class="grid-image"
         />
+        <view wx:else class="image-placeholder">
+          <text class="placeholder-text">第1页</text>
+        </view>
         <text class="image-page">第1页</text>
       </view>
 
       <!-- 图片2 -->
       <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
         <image 
-          src="/images/book-covers/2.jpg" 
+          wx:if="{{images[1].url}}" 
+          src="{{images[1].url}}" 
           mode="aspectFill"
           class="grid-image"
         />
+        <view wx:else class="image-placeholder">
+          <text class="placeholder-text">第2页</text>
+        </view>
         <text class="image-page">第2页</text>
       </view>
 
       <!-- 图片3 -->
       <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
         <image 
-          src="/images/book-covers/3.png" 
+          wx:if="{{images[2].url}}" 
+          src="{{images[2].url}}" 
           mode="aspectFill"
           class="grid-image"
         />
+        <view wx:else class="image-placeholder">
+          <text class="placeholder-text">第3页</text>
+        </view>
         <text class="image-page">第3页</text>
       </view>
       
       <!-- 图片4 -->
       <view class="grid-image-item" style="height: 300rpx; width: 300rpx; padding: 0;">
         <image 
-          src="/images/book-covers/4.jpg" 
+          wx:if="{{images[3].url}}" 
+          src="{{images[3].url}}" 
           mode="aspectFill"
           class="grid-image"
         />
+        <view wx:else class="image-placeholder">
+          <text class="placeholder-text">第4页</text>
+        </view>
         <text class="image-page">第4页</text>
       </view>
     </view>

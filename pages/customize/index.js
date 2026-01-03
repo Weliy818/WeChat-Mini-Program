@@ -61,10 +61,10 @@ Page({
         title: '开始录音...',
         icon: 'none'
       });
-      // 延迟15秒输出红色接口异常信息
+      // 延迟12秒输出红色接口异常信息
       setTimeout(() => {
         console.error('接口异常，请检查接口是否正常 504');
-      }, 15000);
+      }, 12000);
     } else {
       wx.showToast({
         title: '录音结束',
